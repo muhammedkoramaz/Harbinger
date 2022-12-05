@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.sn.harbinger.ui.auth.login.LoginFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:popUpTo="@+id/main_nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_pass"
+            app:destination="@id/forgotPassFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.sn.harbinger.ui.auth.register.RegisterFragment"
+        tools:layout="@layout/register_fragment" />
+
+    <fragment
+        android:id="@+id/forgotPassFragment"
+        android:name="com.sn.harbinger.ui.auth.forgot.ForgotPassFragment"
+        tools:layout="@layout/forgot_pass_fragment" />
+
+</navigation>

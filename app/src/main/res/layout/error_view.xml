@@ -1,0 +1,74 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="15dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cv_background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15dp"
+                android:contentDescription="@string/desc_ic_err"
+                android:src="@drawable/ic_cloud_error" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dosis_bold"
+                    android:text="@string/something_went_wrong"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="18sp" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_err"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:fontFamily="@font/dosis_medium"
+                    android:text="@string/unexpected_error"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_try_again"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:drawableStart="@drawable/ic_refresh"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/dosis_medium"
+                    android:text="@string/try_again"
+                    android:textColor="#FFAAAAAA"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="30dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/btn_project_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dosis_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/choose_action"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/iv_close"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/ic_close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_project_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#F7F7F7"
+            android:drawableLeft="@drawable/ic_detail"
+            android:fontFamily="@font/dosis_medium"
+            android:padding="15dp"
+            android:text="@string/detail_project"
+            android:textAlignment="viewStart"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_project_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_header"
+            app:textAllCaps="false"
+            tools:ignore="RtlHardcoded" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_project_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="#F7F7F7"
+            android:drawableLeft="@drawable/ic_delete"
+            android:drawablePadding="7dp"
+            android:fontFamily="@font/dosis_medium"
+            android:padding="15dp"
+            android:text="@string/delete_project"
+            android:textAlignment="viewStart"
+            android:textColor="@color/secondary_text_color"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_project_detail"
+            app:textAllCaps="false"
+            tools:ignore="RtlHardcoded" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

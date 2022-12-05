@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/dashboard_nav_host"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph='@navigation/dashboard_nav_graph' />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@color/divider_color"
+            app:layout_constraintBottom_toTopOf="@id/bottomBar"
+            app:layout_constraintEnd_toEndOf="@id/bottomBar"
+            app:layout_constraintStart_toStartOf="@id/bottomBar"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard_nav_host" />
+
+        <me.ibrahimsn.lib.SmoothBottomBar
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            app:backgroundColor="@color/white"
+            app:iconSize="28dp"
+            app:iconTint="@color/main_color"
+            app:iconTintActive="@color/white"
+            app:indicatorColor="@color/main_color"
+            app:indicatorRadius="8dp"
+            app:itemPadding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/menu"
+            app:sideMargins="25dp"
+            app:textColor="@color/white"
+            app:textSize="15sp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

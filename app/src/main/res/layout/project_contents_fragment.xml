@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="project"
+            type="com.sn.harbinger.data.model.Project" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.dashboard.home.project.contents.ProjectContentsFragment">
+
+            <io.armcha.elasticview.ElasticView
+                android:id="@+id/card_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="1.5dp"
+                app:cardUseCompatPadding="true"
+                app:flexibility="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_remaining_task_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/ic_task"
+                        android:drawablePadding="3dp"
+                        android:fontFamily="@font/dosis_medium"
+                        android:text="@string/remaining_task"
+                        android:textColor="@color/secondary_text_color"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/pb_project_progress"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/pb_project_progress" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_remaining_task"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/empty"
+                        android:textAlignment="center"
+                        android:textColor="@color/third_text_color"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_remaining_task_title"
+                        app:layout_constraintStart_toStartOf="@+id/tv_remaining_task_title"
+                        app:layout_constraintTop_toBottomOf="@id/tv_remaining_task_title" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_remaining_day_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/ic_time"
+                        android:drawablePadding="3dp"
+                        android:fontFamily="@font/dosis_medium"
+                        android:text="@string/remaining_day"
+                        android:textColor="@color/secondary_text_color"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/pb_project_progress"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/pb_project_progress" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_remaining_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/dosis_medium"
+                        android:text="@string/empty"
+                        android:textAlignment="center"
+                        android:textColor="@color/third_text_color"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_remaining_day_title"
+                        app:layout_constraintStart_toStartOf="@+id/tv_remaining_day_title"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_remaining_day_title" />
+
+                    <ProgressBar
+                        android:id="@+id/pb_project_progress"
+                        android:layout_width="130dp"
+                        android:layout_height="120dp"
+                        android:layout_marginVertical="10dp"
+                        android:indeterminateOnly="false"
+                        android:paddingVertical="10dp"
+                        android:progress="@{Integer.parseInt(project.projectProgress)}"
+                        android:progressDrawable="@drawable/pb_circular_determinative"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_progress_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{`%`+project.projectProgress}"
+                        android:textColor="@color/secondary_text_color"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/pb_project_progress"
+                        app:layout_constraintEnd_toEndOf="@+id/pb_project_progress"
+                        app:layout_constraintStart_toStartOf="@+id/pb_project_progress"
+                        app:layout_constraintTop_toTopOf="@+id/pb_project_progress" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </io.armcha.elasticview.ElasticView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_project_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/dosis_medium"
+                android:padding="10dp"
+                android:text="@string/project_tasks"
+                android:textColor="@color/main_text_color"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_header" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_project_contents" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

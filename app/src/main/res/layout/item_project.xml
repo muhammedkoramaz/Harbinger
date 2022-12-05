@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.sn.harbinger.data.model.Project" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:gravity="center">
+
+        <io.armcha.elasticview.ElasticView
+            android:id="@+id/itemProject"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="1.5dp"
+            app:cardUseCompatPadding="true"
+            app:flexibility="5">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:padding="3dp">
+
+                <ProgressBar
+                    android:id="@+id/pbProjectProgress"
+                    android:layout_width="110dp"
+                    android:layout_height="90dp"
+                    android:indeterminateOnly="false"
+                    android:padding="10dp"
+                    android:progress="@{Integer.parseInt(item.projectProgress)}"
+                    android:progressDrawable="@drawable/pb_circular_determinative"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvProgressText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{`%`+item.projectProgress}"
+                    android:textColor="@color/secondary_text_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/pbProjectProgress"
+                    app:layout_constraintEnd_toEndOf="@+id/pbProjectProgress"
+                    app:layout_constraintStart_toStartOf="@+id/pbProjectProgress"
+                    app:layout_constraintTop_toTopOf="@+id/pbProjectProgress" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvProjectName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dosis_medium"
+                    android:text="@{item.projectName}"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_end_date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_end_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/dosis_medium"
+                    android:textAlignment="center"
+                    android:textColor="@color/third_text_color"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </io.armcha.elasticview.ElasticView>
+
+    </LinearLayout>
+</layout>

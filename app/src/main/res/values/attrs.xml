@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PageHeader">
+        <attr name="titleText" format="string" />
+        <attr name="textColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ErrorView">
+        <attr name="errText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ProfileInfoView">
+        <attr name="title" format="string" />
+        <attr name="leftIcon" format="reference" />
+        <attr name="rightIcon" format="reference" />
+        <attr name="tintColor" format="color"/>
+    </declare-styleable>
+
+</resources>

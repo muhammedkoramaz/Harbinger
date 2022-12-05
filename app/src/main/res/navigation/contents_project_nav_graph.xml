@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contents_project_nav_graph"
+    app:startDestination="@id/contentsProjectFragment">
+
+    <fragment
+        android:id="@+id/contentsProjectFragment"
+        android:name="com.sn.harbinger.ui.dashboard.home.project.contents.ProjectContentsFragment"
+        tools:layout="@layout/project_contents_fragment">
+
+    </fragment>
+
+</navigation>

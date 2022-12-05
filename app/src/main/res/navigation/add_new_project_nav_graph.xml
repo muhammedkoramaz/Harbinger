@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_new_project_nav_graph"
+    app:startDestination="@id/addNewProjectFragment">
+
+    <fragment
+        android:id="@+id/addNewProjectFragment"
+        android:name="com.sn.harbinger.ui.dashboard.home.project.add.AddNewProjectFragment"
+        tools:layout="@layout/add_new_project_fragment">
+
+        <action
+            android:id="@+id/action_add_project_success"
+            app:destination="@id/newProjectFragmentSuccess"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/newProjectFragmentSuccess"
+        android:name="com.sn.harbinger.ui.dashboard.home.project.add.AddProjectSuccessFragment"
+        tools:layout="@layout/add_project_success_fragment">
+
+        <argument
+            android:name="argsProjectName"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

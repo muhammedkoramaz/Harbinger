@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.dashboard.home.project.add.AddProjectSuccessFragment">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/av_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="success.json" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_success"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/dosis_medium"
+            android:padding="8dp"
+            android:text="Project successfully added"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/av_success" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_project_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Project name"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            app:fontFamily="@font/dosis_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_success" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="@color/main_color"
+            android:fontFamily="@font/dosis_medium"
+            android:padding="15dp"
+            android:text="Return home page"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnSecond"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:spinning_bar_color="@color/white"
+            app:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnSecond"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/dosis_medium"
+            android:padding="15dp"
+            android:text="Go to project detail"
+            android:textColor="@color/main_text_color"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:textAllCaps="false" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
